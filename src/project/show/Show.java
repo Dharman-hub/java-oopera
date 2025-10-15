@@ -42,16 +42,16 @@ public class Show {
             coincidence = true;
             System.out.println("Актёр добавлен в спектакль!");
         } else {
-        for (Actor a: performanceActors) {
-            if (a.equals(actor)) {
-                found = true;
-                break;
+            for (Actor a: performanceActors) {
+                if (a.equals(actor)) {
+                    found = true;
+                    break;
+                }
             }
-        }
-        if (!found) {
-            performanceActors.add(actor);
-            System.out.println("Актёр добавлен в спектакль!");
-            coincidence = true;
+            if (!found) {
+                performanceActors.add(actor);
+                System.out.println("Актёр добавлен в спектакль!");
+                coincidence = true;
             }
 
         }
