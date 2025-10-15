@@ -1,10 +1,12 @@
-import person.Actor;
-import person.Choreographer;
-import person.Director;
-import person.MusicAuthor;
-import show.Ballet;
-import show.Opera;
-import show.Show;
+package project;
+
+import project.person.Actor;
+import project.person.Choreographer;
+import project.person.Director;
+import project.person.MusicAuthor;
+import project.show.Ballet;
+import project.show.Opera;
+import project.show.Show;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -13,21 +15,21 @@ public class Theatre {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        Actor actor1 = new Actor("Иван", "Иванов", Sex.MALE.toString(), 28, 182);
-        Actor actor2 = new Actor("Анна", "Киселёва", Sex.FEMALE.toString(), 24, 175);
-        Actor actor3 = new Actor("Михаил", "Уткин", Sex.MALE.toString(), 25, 190);
+        Actor actor1 = new Actor("Иван", "Иванов", Sex.MALE, 28, 182);
+        Actor actor2 = new Actor("Анна", "Киселёва", Sex.FEMALE, 24, 175);
+        Actor actor3 = new Actor("Михаил", "Уткин", Sex.MALE, 25, 190);
         ArrayList<Actor> allActors = new ArrayList<>();
         allActors.add(actor1);
         allActors.add(actor2);
         allActors.add(actor3);
 
-        Director director1 = new Director("Захар", "Запорожцев", Sex.MALE.toString(),
+        Director director1 = new Director("Захар", "Запорожцев", Sex.MALE,
                 40, 52);
-        Director director2 = new Director("Дмитрий", "Захаров", Sex.MALE.toString(),
+        Director director2 = new Director("Дмитрий", "Захаров", Sex.MALE,
                 63, 40);
-        MusicAuthor musicAuthor = new MusicAuthor("Алексей", "Лебедев", Sex.MALE.toString(),
+        MusicAuthor musicAuthor = new MusicAuthor("Алексей", "Лебедев", Sex.MALE,
                 50, 34);
-        Choreographer choreographer = new Choreographer("Александр", "Лебедев", Sex.MALE.toString(),
+        Choreographer choreographer = new Choreographer("Александр", "Лебедев", Sex.MALE,
                 45, 28);
 
         Show show = new Show("Кабала святош", 120, director1);
@@ -119,15 +121,11 @@ public class Theatre {
                     }
                     break;
                 case 6:
-                    for (Show s: performances) {
-                        System.out.println(s.getTitle());
-                        if (!s.getPerformanceActors().isEmpty()) {
-                            System.out.println(s.getPerformanceActors());
-                        } else {
-                            System.out.println("Пока что в спектакле никто не участвует");
-                        }
-                        System.out.println();
-                    }
+                    show.printAllActors();
+                    System.out.println();
+                    ballet.printAllActors();
+                    System.out.println();
+                    opera.printAllActors();
                     break;
                 case 0:
                     System.out.println("Выход...");

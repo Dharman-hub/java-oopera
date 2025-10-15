@@ -1,7 +1,7 @@
-package show;
+package project.show;
 
-import person.Director;
-import person.MusicAuthor;
+import project.person.Director;
+import project.person.MusicAuthor;
 
 public class Opera extends MusicShow {
     protected final int choirSize;

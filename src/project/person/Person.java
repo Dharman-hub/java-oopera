@@ -1,18 +1,19 @@
-package person;
+package project.person;
 
+import project.Sex;
 import java.util.Objects;
 
 public class Person {
     protected final String firstName;
     protected final String lastName;
-    protected String sex;
+    protected final Sex sex;
     protected int age;
 
     public String getLastName() {
         return lastName;
     }
 
-    public Person(String firstName, String lastName, String sex, int age) {
+    public Person(String firstName, String lastName, Sex sex, int age) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.sex = sex;

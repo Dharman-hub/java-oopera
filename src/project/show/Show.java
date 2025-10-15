@@ -1,7 +1,7 @@
-package show;
+package project.show;
 
-import person.Actor;
-import person.Director;
+import project.person.Actor;
+import project.person.Director;
 
 import java.util.ArrayList;
 
@@ -35,41 +35,58 @@ public class Show {
 
 
     public void addActor(Actor actor) {
+        boolean coincidence = false;
         boolean found = false;
         if (performanceActors.isEmpty()) {
             performanceActors.add(actor);
-            found = true;
+            coincidence = true;
             System.out.println("Актёр добавлен в спектакль!");
-        }else{
+        } else {
         for (Actor a: performanceActors) {
-            if (!a.equals(actor)) {
-                performanceActors.add(actor);
-                System.out.println("Актёр добавлен в спектакль!");
+            if (a.equals(actor)) {
                 found = true;
                 break;
             }
         }
-        }
         if (!found) {
+            performanceActors.add(actor);
+            System.out.println("Актёр добавлен в спектакль!");
+            coincidence = true;
+            }
+
+        }
+        if (!coincidence) {
             System.out.println("Такой актёр уже есть в списке");
         }
     }
 
     public void changeActor(Actor actor, String previousActorLastName){
-        Actor oldActor = null;
+        ArrayList<Actor> oldActor = new ArrayList<>();
         for (Actor a: performanceActors) {
             if (a.getLastName().equals(previousActorLastName)) {
-                oldActor = a;
-                break;
+                oldActor.add(a);
             }
         }
-        if (oldActor == null) {
+        if (oldActor.isEmpty()) {
             System.out.println("Такого актёра нет в спектакле");
             return;
         }
-        performanceActors.remove(oldActor);
+        if (oldActor.size() > 1) {
+            System.out.println("Найдено несколько актёров с этой фамилией. Неизвестно, кого заменить");
+            return;
+        }
+        performanceActors.remove(oldActor.getFirst());
         performanceActors.add(actor);
         System.out.println("Актёр был заменён!");
+    }
+
+    public void printAllActors() {
+        System.out.println(title);
+        if (!performanceActors.isEmpty()) {
+            System.out.println(performanceActors);
+        } else {
+            System.out.println("Пока что в спектакле никто не участвует");
+        }
     }
 
     @Override

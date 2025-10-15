@@ -1,11 +1,12 @@
-package person;
+package project.person;
 
+import project.Sex;
 import java.util.Objects;
 
-public class Actor extends person.Person {
+public class Actor extends project.person.Person {
     protected final int height;
 
-    public Actor(String firstName, String lastName, String sex, int age, int height) {
+    public Actor(String firstName, String lastName, Sex sex, int age, int height) {
         super(firstName, lastName, sex, age);
         this.height = height;
     }

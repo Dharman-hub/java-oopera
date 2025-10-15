@@ -1,3 +1,5 @@
+package project;
+
 public class Libretto {
     public static final String swanLakeLibretto = """
             ПРОЛОГ

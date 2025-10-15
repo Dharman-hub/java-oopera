@@ -1,7 +1,7 @@
-package show;
+package project.show;
 
-import person.Director;
-import person.MusicAuthor;
+import project.person.Director;
+import project.person.MusicAuthor;
 
 public class MusicShow extends Show {
     protected final MusicAuthor musicAuthor;

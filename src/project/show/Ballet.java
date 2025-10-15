@@ -1,8 +1,8 @@
-package show;
+package project.show;
 
-import person.Choreographer;
-import person.Director;
-import person.MusicAuthor;
+import project.person.Choreographer;
+import project.person.Director;
+import project.person.MusicAuthor;
 
 public class Ballet extends MusicShow {
     private final Choreographer choreographer;

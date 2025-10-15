@@ -1,3 +1,5 @@
+package project;
+
 public enum Sex {
     MALE,
     FEMALE;
